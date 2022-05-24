@@ -1,0 +1,156 @@
+*{  margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+
+}
+body{
+    min-height: 100%;
+}
+.header{
+    grid-area: header;
+    background-color: rgb(115, 227, 255);
+    text-align: center;
+}
+
+.header li{
+    list-style-type: none;
+    display: inline-grid;
+    margin-right: 2%;
+    margin-top: 1%;
+    background-color: rgb(248, 112, 207);
+    width: 15%;
+    border-radius: 18px;
+
+}
+.header li a{
+
+    font-family: cursive;
+    color: rgb(255, 255, 255);
+    font-size: 140%;
+    text-decoration: none;
+}
+.header li a:hover
+{
+    color: rgb(44, 92, 196);
+}
+#subseccion1, #subseccion2, #subseccion3
+{
+ 
+    top: 100%;
+    left: 0px;
+    background-color: rgb(243, 118, 237);
+    font: normal 0.8em arial;
+    width:90%;
+    border-radius: 7px;
+    display: none;
+    z-index: 1;
+}
+.navbar{
+    grid-area: navbar;
+    background-color: rgb(247, 255, 140);
+    text-align: center;
+    z-index: -2;
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(247, 255, 140);
+    text-align: center;
+}
+.main{
+    grid-area: main;
+    background-color: rgb(247, 140, 193);
+    background-image: url("https://www.newslinereport.com/online/nota_finalmente-llega-al-cine-hello-kitty.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    background-size: 60%;
+    z-index: -2;
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(181, 255, 191);
+    text-align: center;
+}
+.grid-container{
+    display: grid;
+    gap: 5px;
+    grid-template:
+    "header" 50px
+    "navbar" 50px
+    "main" auto
+    "sidebar" 50px
+    "footer" 50px;
+
+}
+ .grid-container > * {
+     box-shadow: -1px 1px 7px 0px rebeccapurple ;
+     border-radius: 4px;
+     padding: 10px;
+     text-align: center;
+ }
+
+ #contenedor{
+
+    background-color: rgb(126, 229, 255);
+    position: absolute;
+    right: 30%;
+    margin-top: 10%;
+    border-radius: 20px;
+    width: 40%;
+    height: 50%;
+}
+
+#contenedor #textocontenedor{
+
+    color: rgb(255, 0, 200);
+    position: center;
+    margin-top: 5%;
+    right: 42%;
+}
+#imagenmenu{
+    width: 7%;
+    height: 7%;
+    margin-right: 90%;
+    display: none;
+
+}
+#menulateral
+{
+    width: 40%;
+    height: 600px;
+    background-color: rgb(189, 255, 163);
+    z-index: -1;
+    display: none;
+}
+@media (min-width: 150px) and (max-width: 599px)
+{
+    .header ul{
+        display: none;
+    }
+    #imagenmenu{
+     display: block;
+    
+    }
+
+}
+@media (min-width: 600px){
+    .grid-container{
+    grid-template: 
+    "header  header" 100px
+    "navbar  navbar" 50px
+    "sidebar main"   auto
+    "footer  footer" 10px /
+    200px    auto;
+}
+}
+@media (min-width: 900px){
+ .grid-container{
+     grid-template: 
+     "header  header  header" 100px
+     "navbar  main    sidebar"  auto
+     "footer  footer  footer" 100px /
+     200px    auto    200px;
+ }
+}
